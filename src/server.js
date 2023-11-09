@@ -28,8 +28,11 @@ app.get("/:nome/:sobrenome/:idade/:nacionalidade/:time", (req, res) => {
 })
 
 app.post("/", (req, res) => {
+    const nome = req.body.nome;
+    const sobrenome = req.body.sobrenome;
+    const idade = req.body.idade;
     // Rota para POST
-    res.status(200).json({ message: "Hello POST!"});
+    res.status(200).json({noemUsuario: nome, sobrenomeUsuario: sobrenome, idadeUsuario: idade});
 })
 
 app.put("/admin/users", (req, res) => {
